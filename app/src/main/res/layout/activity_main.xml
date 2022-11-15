@@ -6,26 +6,163 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:gravity="top"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/ourFood"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <ImageButton
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="left"
+                android:gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/friends" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Tasty"
+                android:textAllCaps="false"
+                android:textSize="30dp" />
+
+            <ImageButton
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/settings" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:layout_marginLeft="100dp"
-            android:contentDescription="@string/picture_of_food"
-            android:src="@drawable/spaghetti2" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="top"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageButton
+                android:id="@+id/ourFood"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:layout_marginLeft="150dp"
+                android:contentDescription="@string/picture_of_food"
+                android:src="@drawable/spaghetti2" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Sreyas Agarwal                    7:20 pm"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/friend1Food"
+                    android:layout_width="350dp"
+                    android:layout_height="467dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:layout_marginLeft="30dp"
+                    android:contentDescription="@string/picture_of_food"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/spaghetti2">
+                </ImageButton>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Saloni Garg                           6:45 pm"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/friend2Food"
+                    android:layout_width="350dp"
+                    android:layout_height="467dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:layout_marginLeft="30dp"
+                    android:contentDescription="@string/picture_of_food"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/spaghetti2">
+                </ImageButton>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Tejal Bajaj                             8:00 pm"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/friend3Food"
+                    android:layout_width="350dp"
+                    android:layout_height="467dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:layout_marginLeft="30dp"
+                    android:contentDescription="@string/picture_of_food"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/spaghetti2">
+                </ImageButton>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
