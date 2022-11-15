@@ -47,6 +47,7 @@
                 android:layout_gravity="right"
                 android:gravity="center"
                 android:scaleType="fitCenter"
+                android:id="@+id/settings_button"
                 android:src="@drawable/settings" />
 
         </androidx.appcompat.widget.Toolbar>
