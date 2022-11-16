@@ -2,6 +2,7 @@ package com.example.tasty;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.media.Image;
@@ -13,13 +14,14 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    ImageButton settingsBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // Code to display settings activity
-        ImageButton settingsBtn = (ImageButton) findViewById(R.id.settings_button);
+        settingsBtn = (ImageButton) findViewById(R.id.settings_button);
         settingsBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

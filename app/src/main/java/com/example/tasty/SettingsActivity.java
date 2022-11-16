@@ -3,17 +3,28 @@ package com.example.tasty;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    ImageButton backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        getSupportActionBar().setTitle("Settings");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // Code to go back
+        backBtn = (ImageButton) findViewById(R.id.back_button);
+        backBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+            }
+        });
 
     }
 }

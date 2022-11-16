@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity"
-    android:orientation="vertical"
     android:gravity="center"
-    >
+    android:orientation="vertical"
+    tools:context=".SettingsActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Settings"
-        android:textSize="35dp"
-        android:gravity="center">
+        android:orientation="horizontal">
 
-    </TextView>
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/backbutton">
+
+        </ImageButton>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Settings"
+            android:layout_marginLeft="90dp"
+            android:textSize="35dp"></TextView>
+
+    </LinearLayout>
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
@@ -26,21 +41,20 @@
         android:layout_gravity="center"
         android:layout_marginTop="35dp"
         android:foregroundGravity="center_horizontal"
-        app:cardCornerRadius="5dp"
-        app:cardBackgroundColor="@color/design_default_color_background">
+        app:cardBackgroundColor="@color/design_default_color_background"
+        app:cardCornerRadius="5dp">
 
         <LinearLayout
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="164dp"
                 android:layout_height="wrap_content"
                 android:scaleType="fitCenter"
-                android:src="@drawable/profile">
-            </ImageView>
+                android:src="@drawable/profile"></ImageView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -51,130 +65,118 @@
                     android:layout_width="123dp"
                     android:layout_height="match_parent"
                     android:text="Profile"
-                    android:textSize="30dp">
-                </TextView>
+                    android:textSize="30dp"></TextView>
 
                 <TextView
                     android:layout_width="123dp"
                     android:layout_height="match_parent"
                     android:text="John Doe"
-                    android:textSize="20dp">
-                </TextView>
+                    android:textSize="20dp"></TextView>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="350dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginBottom="20dp"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="35dp"-->
-<!--        android:foregroundGravity="center_horizontal"-->
-<!--        app:cardCornerRadius="5dp"-->
-<!--        app:cardBackgroundColor="@color/design_default_color_background">-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="20dp"
+        android:foregroundGravity="center_horizontal"
+        app:cardBackgroundColor="@color/design_default_color_background"
+        app:cardCornerRadius="5dp">
 
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Dietary Preferences"-->
-<!--            android:textSize="30dp"-->
-<!--            android:gravity="center">-->
-<!--        </TextView>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="vertical">-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Dietary Preferences"
+                android:textSize="30dp"></TextView>
 
-<!--            <CheckBox-->
-<!--                android:id="@+id/lactose"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:layout_marginTop="45dp"-->
-<!--                android:minHeight="48dp"-->
-<!--                android:paddingLeft="20dp"-->
-<!--                android:text="Lactose-intolerance"-->
-<!--                android:textSize="20dp" />-->
+            <CheckBox
+                android:id="@+id/lactose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
 
-<!--            <CheckBox android:id="@+id/vegetarian"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:paddingLeft="20dp"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:minHeight="48dp"-->
-<!--                android:text="Vegetarian"-->
-<!--                android:textSize="20dp"/>-->
+                android:minHeight="50dp"
+                android:paddingLeft="20dp"
+                android:text="Lactose-intolerance"
+                android:textSize="20dp" />
 
-<!--            <CheckBox-->
-<!--                android:id="@+id/vegan"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:minHeight="48dp"-->
-<!--                android:paddingLeft="20dp"-->
-<!--                android:text="Vegan"-->
-<!--                android:textSize="20dp" />-->
+            <CheckBox
+                android:id="@+id/vegetarian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:text="Vegetarian"
+                android:textSize="20dp" />
 
-<!--            <CheckBox android:id="@+id/gluten"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:paddingLeft="20dp"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:minHeight="48dp"-->
-<!--                android:text="Gluten-intolerance"-->
-<!--                android:textSize="20dp"/>-->
+            <CheckBox
+                android:id="@+id/vegan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:paddingLeft="20dp"
+                android:text="Vegan"
+                android:textSize="20dp" />
 
-<!--            <CheckBox android:id="@+id/peanut"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:paddingLeft="20dp"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:minHeight="48dp"-->
-<!--                android:text="Peanut allergies"-->
-<!--                android:textSize="20dp"/>-->
+            <CheckBox
+                android:id="@+id/gluten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:paddingLeft="20dp"
+                android:text="Gluten-intolerance"
+                android:textSize="20dp" />
 
-<!--            <CheckBox-->
-<!--                android:id="@+id/kosher"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:minHeight="48dp"-->
-<!--                android:paddingLeft="20dp"-->
-<!--                android:text="Kosher"-->
-<!--                android:textSize="20dp" />-->
+            <CheckBox
+                android:id="@+id/peanut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:paddingLeft="20dp"
+                android:text="Peanut allergies"
+                android:textSize="20dp" />
 
-<!--            <CheckBox-->
-<!--                android:id="@+id/treenut"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="20dp"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:minHeight="48dp"-->
-<!--                android:paddingLeft="20dp"-->
-<!--                android:text="Tree nut allergies"-->
-<!--                android:textSize="20dp"-->
-<!--                tools:ignore="TouchTargetSizeCheck" />-->
+            <CheckBox
+                android:id="@+id/kosher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:paddingLeft="20dp"
+                android:text="Kosher"
+                android:textSize="20dp" />
 
-<!--        </LinearLayout>-->
+            <CheckBox
+                android:id="@+id/treenut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:minHeight="48dp"
+                android:paddingLeft="20dp"
+                android:text="Tree nut allergies"
+                android:textSize="20dp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-
-
-
-<!--        <ListView-->
-<!--            android:id="@+id/list_dietary"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-
-
-
-<!--        </ListView>-->
-<!--    </androidx.cardview.widget.CardView>-->
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
