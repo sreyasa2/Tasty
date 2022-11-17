@@ -18,19 +18,20 @@ import android.provider.MediaStore;
 import android.widget.Toast;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
     private static final int REQUEST_CODE = 1887;
     ImageButton ourFoodBtn;
     ImageButton settingsBtn;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         // Code to display settings activity
         settingsBtn = (ImageButton) findViewById(R.id.settings_button);
         settingsBtn.setOnClickListener(new View.OnClickListener(){
@@ -48,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(cameraIntent, REQUEST_CODE);
             }
         });
-
 
     }
 
