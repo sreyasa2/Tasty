@@ -1,13 +1,16 @@
 package com.example.tasty;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
-import com.example.tasty.ViewPagerAdapter;
+import androidx.appcompat.widget.Toolbar;
+
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -15,22 +18,20 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
-    ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList("Friends",
-            "Recipe",
-            "Ingredients"));
+    ImageButton settingsBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        ViewPager2 viewPager = findViewById(R.id.pager);
-        final ViewPagerAdapter adapter = new ViewPagerAdapter(this);
-        viewPager.setAdapter(adapter);
-
-        new TabLayoutMediator(tabLayout, viewPager,
-                (tab, position) -> {tab.setText(arrayList.get(position));
-        }).attach();
+        // Code to display settings activity
+        settingsBtn = (ImageButton) findViewById(R.id.settings_button);
+        settingsBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            }
+        });
     }
+
 }
