@@ -30,6 +30,7 @@
                 android:layout_gravity="left"
                 android:gravity="center"
                 android:scaleType="fitCenter"
+                android:id="@+id/friends_button"
                 android:src="@drawable/friends" />
 
             <TextView
