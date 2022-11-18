@@ -96,8 +96,6 @@
                 </LinearLayout>
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
-
-
     </com.google.android.material.appbar.AppBarLayout>
     <TextView
         android:id="@+id/textView"
@@ -106,7 +104,7 @@
         android:layout_weight="10"
         android:layout_gravity="top"
         android:gravity="center"
-        android:paddingTop="30dp"
+        android:paddingTop="50dp"
         android:text="RECIPE"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#000000"
@@ -239,6 +237,4 @@
                         </LinearLayout>
                 </LinearLayout>
         </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
