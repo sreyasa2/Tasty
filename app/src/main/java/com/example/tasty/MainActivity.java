@@ -1,32 +1,26 @@
 package com.example.tasty;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.provider.MediaStore;
 import android.widget.Toast;
 import java.util.Random;
 
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
+public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 1887;
     ImageButton ourFoodBtn;
     ImageButton settingsBtn;
+    Button recipeBtn;
+    Button ingBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +41,22 @@ import java.util.Arrays;
             public void onClick(View view) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(cameraIntent, REQUEST_CODE);
+            }
+        });
+
+        recipeBtn = findViewById(R.id.recipe_button);
+        recipeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RecipeActivity.class));
+            }
+        });
+
+        ingBtn = findViewById(R.id.ingredients_button);
+        ingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, IngredientsActivity.class));
             }
         });
 
