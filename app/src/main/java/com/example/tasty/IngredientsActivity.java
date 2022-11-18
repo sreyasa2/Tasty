@@ -38,7 +38,7 @@ public class IngredientsActivity extends AppCompatActivity {
         settingsBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(IngredientsActivity.this, MainActivity.class));
+                startActivity(new Intent(IngredientsActivity.this, SettingsActivity.class));
             }
         });
     }

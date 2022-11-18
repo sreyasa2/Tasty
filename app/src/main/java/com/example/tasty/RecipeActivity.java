@@ -39,7 +39,7 @@ public class RecipeActivity extends AppCompatActivity {
         settingsBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RecipeActivity.this, MainActivity.class));
+                startActivity(new Intent(RecipeActivity.this, SettingsActivity.class));
             }
         });
 
