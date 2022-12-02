@@ -21,7 +21,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 1887;
+    public static int blurred = 1;
     ImageButton ourFoodBtn;
+    ImageButton cameraBtn;
     ImageButton settingsBtn;
     Button recipeBtn;
     Button ingBtn;
@@ -32,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.blurred_layout);
         // Code to display settings activity
         settingsBtn = (ImageButton) findViewById(R.id.settings_button);
         settingsBtn.setOnClickListener(new View.OnClickListener(){
@@ -42,14 +45,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ourFoodBtn = findViewById(R.id.ourFood);
+        /*ourFoodBtn = findViewById(R.id.ourFood);
         ourFoodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(cameraIntent, REQUEST_CODE);
             }
-        });
+        });*/
+
+        if(blurred == 1){
+            cameraBtn = findViewById(R.id.camera);
+            cameraBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(cameraIntent, REQUEST_CODE);
+                }
+            });
+        }
+
 
         recipeBtn = findViewById(R.id.recipe_button);
         recipeBtn.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
-                    toggleButton2.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.img_heart_red));
+                    toggleButton2.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.img_heart_red));
                 else
                     toggleButton2.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.img_heart_grey));
             }
@@ -97,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
-                    toggleButton3.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.img_heart_red));
+                    toggleButton3.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.img_heart_red));
                 else
                     toggleButton3.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.img_heart_grey));
             }
@@ -108,6 +123,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == REQUEST_CODE && resultCode == RESULT_OK)
         {
+            setContentView(R.layout.activity_main);
+            blurred = 0;
+            ourFoodBtn = findViewById(R.id.ourFood);
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             int[] images = {R.drawable.spaghetti3,R.drawable.spaghetti4,R.drawable.spaghetti5};
             Random rand = new Random();

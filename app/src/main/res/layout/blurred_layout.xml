@@ -105,10 +105,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="-26dp"
+        tools:layout_editor_absoluteY="-120dp">
+
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:gravity="top"
@@ -126,20 +129,20 @@
                 android:contentDescription="@string/picture_of_food"
                 android:src="@drawable/camera" />
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Sreyas Agarwal                    7:20 pm"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="10dp"
                     android:textSize="20dp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <ImageButton
@@ -148,12 +151,21 @@
                     android:layout_height="467dp"
                     android:adjustViewBounds="true"
                     android:background="@null"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="25dp"
                     android:contentDescription="@string/picture_of_food"
                     android:scaleType="fitCenter"
                     android:src="@drawable/blurred">
                 </ImageButton>
             </LinearLayout>
+            <ToggleButton
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/myToggleButton"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textOn=""
+                android:textOff=""/>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -162,13 +174,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Saloni Garg                           6:45 pm"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="10dp"
                     android:textSize="20dp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <ImageButton
@@ -177,12 +189,21 @@
                     android:layout_height="467dp"
                     android:adjustViewBounds="true"
                     android:background="@null"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="25dp"
                     android:contentDescription="@string/picture_of_food"
                     android:scaleType="fitCenter"
                     android:src="@drawable/blurred">
                 </ImageButton>
             </LinearLayout>
+            <ToggleButton
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/myToggleButton2"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textOn=""
+                android:textOff=""/>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -191,7 +212,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Tejal Bajaj                             8:00 pm"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="10dp"
                     android:textSize="20dp"
                     android:textColor="@color/black"/>
@@ -199,19 +220,28 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
                 <ImageButton
                     android:id="@+id/friend3FoodBlur"
                     android:layout_width="350dp"
                     android:layout_height="467dp"
                     android:adjustViewBounds="true"
                     android:background="@null"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="25dp"
                     android:contentDescription="@string/picture_of_food"
                     android:scaleType="fitCenter"
                     android:src="@drawable/blurred">
                 </ImageButton>
             </LinearLayout>
+            <ToggleButton
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/myToggleButton3"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textOn=""
+                android:textOff=""/>
+
         </LinearLayout>
     </ScrollView>
 
