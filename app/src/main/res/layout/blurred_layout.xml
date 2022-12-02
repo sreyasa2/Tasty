@@ -1,6 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</LinearLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="80dp"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/friends" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="95dp"
+                        android:text="Tasty"
+                        android:textAllCaps="false"
+                        android:textSize="30dp" />
+
+                    <ImageButton
+                        android:id="@+id/settings_button"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="right"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/settings" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/friends_button"
+                        android:text="Friends"
+                        android:textAllCaps="false"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:text="Ingredients"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/ingredients_button"
+                        android:textAllCaps="false"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:text="Recipe"
+                        android:id="@+id/recipe_button"
+                        android:layout_marginLeft="30dp"
+                        android:textAllCaps="false"
+                        android:textSize="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="top"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageButton
+                android:id="@+id/camera"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:layout_marginLeft="135dp"
+                android:contentDescription="@string/picture_of_food"
+                android:src="@drawable/camera" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Sreyas Agarwal                    7:20 pm"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/friend1FoodBlur"
+                    android:layout_width="350dp"
+                    android:layout_height="467dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:layout_marginLeft="30dp"
+                    android:contentDescription="@string/picture_of_food"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/blurred">
+                </ImageButton>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Saloni Garg                           6:45 pm"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/friend2FoodBlur"
+                    android:layout_width="350dp"
+                    android:layout_height="467dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:layout_marginLeft="30dp"
+                    android:contentDescription="@string/picture_of_food"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/blurred">
+                </ImageButton>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Tejal Bajaj                             8:00 pm"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/friend3FoodBlur"
+                    android:layout_width="350dp"
+                    android:layout_height="467dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:layout_marginLeft="30dp"
+                    android:contentDescription="@string/picture_of_food"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/blurred">
+                </ImageButton>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
